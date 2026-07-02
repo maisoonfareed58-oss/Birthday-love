@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️ | A Little Surprise</title>
+<meta name="description" content="A cinematic birthday surprise, made with love.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Tenor+Sans&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient floating particles (gold/pink dust, whole page) -->
+<canvas id="particlesCanvas" class="particles-canvas" aria-hidden="true"></canvas>
+
+<!-- Custom cursor glow -->
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- Film grain overlay -->
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- Progress line that tracks scroll -->
+<div class="scroll-progress" aria-hidden="true">
+  <div class="scroll-progress__fill" id="scrollFill"></div>
+</div>
+
+<!-- Confetti canvas (used in final section) -->
+<canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+<main>
+
+  <!-- =========================================================
+       SECTION 1 — LANDING
+  ========================================================== -->
+  <section id="landing" class="section landing">
+    <div class="landing__stars" aria-hidden="true"></div>
+    <div class="landing__vignette" aria-hidden="true"></div>
+
+    <div class="landing__content">
+      <p class="eyebrow reveal-fade">for my favorite person</p>
+
+      <h1 class="landing__title">
+        <span class="reveal-word">Happy</span>
+        <span class="reveal-word">Birthday</span>
+        <span class="landing__heart reveal-word" aria-hidden="true">❤️</span>
+      </h1>
+
+      <p class="landing__subtitle reveal-fade">A little surprise made with love.</p>
+
+      <button class="btn-glow reveal-fade" id="beginBtn" type="button">
+        <span class="btn-glow__ring" aria-hidden="true"></span>
+        <span class="btn-glow__label">Begin the Surprise</span>
+      </button>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span></span>
+      <p>scroll</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       TRANSITION VEIL (JS toggles this on button click)
+  ========================================================== -->
+  <div class="transition-veil" id="transitionVeil" aria-hidden="true">
+    <div class="transition-veil__petal"></div>
+    <p class="transition-veil__text">opening a memory for you...</p>
+  </div>
+
+  <!-- =========================================================
+       SECTION 2 — TIMELINE
+  ========================================================== -->
+  <section id="timeline" class="section timeline">
+    <div class="section-heading">
+      <p class="eyebrow">our story, frame by frame</p>
+      <h2>A Timeline of Us</h2>
+    </div>
+
+    <div class="timeline__track">
+      <div class="timeline__line" aria-hidden="true">
+        <div class="timeline__line-fill" id="timelineFill"></div>
+      </div>
+
+      <article class="timeline__item" data-index="1">
+        <div class="timeline__photo">
+          <div class="timeline__photo-inner">
+            <img src="images/img08.jpg" alt="Two kids smiling in a school courtyard, the very beginning" loading="lazy" decoding="async">
+            <div class="timeline__photo-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="timeline__caption">Where it all began</p>
+      </article>
+
+      <article class="timeline__item" data-index="2">
+        <div class="timeline__photo">
+          <div class="timeline__photo-inner">
+            <img src="images/img09.jpg" alt="A younger you, arms wide open on Amman Street" loading="lazy" decoding="async">
+            <div class="timeline__photo-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="timeline__caption">The first real laugh</p>
+      </article>
+
+      <article class="timeline__item" data-index="3">
+        <div class="timeline__photo">
+          <div class="timeline__photo-inner">
+            <img src="images/img03.jpg" alt="A cozy throwback selfie leaning cheek to cheek" loading="lazy" decoding="async">
+            <div class="timeline__photo-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="timeline__caption">A day we almost missed</p>
+      </article>
+
+      <article class="timeline__item" data-index="4">
+        <div class="timeline__photo">
+          <div class="timeline__photo-inner">
+            <img src="images/img05.jpg" alt="Close together against a deep blue evening sky" loading="lazy" decoding="async">
+            <div class="timeline__photo-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="timeline__caption">Somewhere far from home</p>
+      </article>
+
+      <article class="timeline__item" data-index="5">
+        <div class="timeline__photo">
+          <div class="timeline__photo-inner">
+            <img src="images/img12.jpg" alt="A low-angle candid shot mid-laugh under an open sky" loading="lazy" decoding="async">
+            <div class="timeline__photo-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="timeline__caption">The year everything changed</p>
+      </article>
+
+      <article class="timeline__item" data-index="6">
+        <div class="timeline__photo">
+          <div class="timeline__photo-inner">
+            <img src="images/img10.jpg" alt="An evening walk together by the garden hedges" loading="lazy" decoding="async">
+            <div class="timeline__photo-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="timeline__caption">Quiet, ordinary, perfect</p>
+      </article>
+
+      <article class="timeline__item" data-index="7">
+        <div class="timeline__photo">
+          <div class="timeline__photo-inner">
+            <img src="images/img02.jpg" alt="A Thursday evening selfie, both of us grinning" loading="lazy" decoding="async">
+            <div class="timeline__photo-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="timeline__caption">Celebrating something small</p>
+      </article>
+
+      <article class="timeline__item" data-index="8">
+        <div class="timeline__photo">
+          <div class="timeline__photo-inner">
+            <img src="images/img04.jpg" alt="Life jackets on, laughing together on a boat by the Nile" loading="lazy" decoding="async">
+            <div class="timeline__photo-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="timeline__caption">A hard year, made lighter</p>
+      </article>
+
+      <article class="timeline__item" data-index="9">
+        <div class="timeline__photo">
+          <div class="timeline__photo-inner">
+            <img src="images/img01.jpg" alt="Floating together in the pool on a sunny day" loading="lazy" decoding="async">
+            <div class="timeline__photo-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="timeline__caption">Still choosing each other</p>
+      </article>
+
+      <article class="timeline__item" data-index="10">
+        <div class="timeline__photo">
+          <div class="timeline__photo-inner">
+            <img src="images/img06.jpg" alt="A playful moment inside an old wooden confession booth" loading="lazy" decoding="async">
+            <div class="timeline__photo-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="timeline__caption">Right here, right now</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 3 — QUOTE
+  ========================================================== -->
+  <section id="quote" class="section quote">
+    <div class="quote__glow" aria-hidden="true"></div>
+    <blockquote class="quote__text">
+      <span class="quote__mark" aria-hidden="true">&ldquo;</span>
+      Every picture tells a story.<br>
+      Every story with you became my favorite memory.
+      <span class="quote__mark quote__mark--end" aria-hidden="true">&rdquo;</span>
+    </blockquote>
+  </section>
+
+  <!-- =========================================================
+       SECTION 4 — GALLERY
+  ========================================================== -->
+  <section id="gallery" class="section gallery">
+    <div class="section-heading">
+      <p class="eyebrow">a closer look</p>
+      <h2>The Gallery</h2>
+    </div>
+
+    <div class="gallery__grid">
+      <figure class="gallery__item gallery__item--tall">
+        <img src="images/img11.jpg" alt="Standing together on the grass at night" loading="lazy" decoding="async">
+        <figcaption><span>My favorite kind of quiet</span></figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <img src="images/img13.jpg" alt="A glowing night selfie in the city" loading="lazy" decoding="async">
+        <figcaption><span>That laugh, again</span></figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <img src="images/img07.jpg" alt="A mirror selfie while out shopping together" loading="lazy" decoding="async">
+        <figcaption><span>Somewhere golden</span></figcaption>
+      </figure>
+      <figure class="gallery__item gallery__item--wide">
+        <img src="images/img01.jpg" alt="Floating together in the pool, unposed and happy" loading="lazy" decoding="async">
+        <figcaption><span>Us, unposed</span></figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <img src="images/img04.jpg" alt="On the boat with life jackets on, close together" loading="lazy" decoding="async">
+        <figcaption><span>A little softer here</span></figcaption>
+      </figure>
+      <figure class="gallery__item gallery__item--tall">
+        <img src="images/img06.jpg" alt="Tucked into the confession booth together, laughing" loading="lazy" decoding="async">
+        <figcaption><span>Held onto, always</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 5 — FINAL MESSAGE
+  ========================================================== -->
+  <section id="final-message" class="section final-message">
+    <div class="final-message__glow" aria-hidden="true"></div>
+    <div class="final-message__frame">
+      <p class="final-message__line" data-line="1">Thank you for being my love, best friend, support, backbone and the one I am proud to have in my life...</p>
+      <p class="final-message__line" data-line="2">Doing life with you is one of my greatest blessings.</p>
+      <p class="final-message__line" data-line="3">Thank you for your presence without need to ask. 🫂❤️</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 6 — ENDING
+  ========================================================== -->
+  <section id="ending" class="section ending">
+    <div class="ending__glow" aria-hidden="true"></div>
+    <div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
+    <h2 class="ending__title">
+      <span>Happy Birthday,</span>
+      <span class="ending__title-script">My Favorite Person</span>
+      <span aria-hidden="true">❤️</span>
+    </h2>
+    <button class="btn-outline" id="replayBtn" type="button">Relive it again</button>
+  </section>
+
+</main>
+
+<script src="script.js" defer></script>
+</body>
+</html>
